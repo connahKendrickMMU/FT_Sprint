@@ -103,9 +103,9 @@ Test your might
 - Add a stamina limit considering actions like sprinting and jumping, not too advanced can charge/ deplete in the Tick method.
 
 ## Medium
-- Introduce accelleration and de-acceleration, so the character takes time to get up to speed and slow down, when sprint ends.
+- Introduce acceleration and deceleration, so the character takes time to get up to speed and slow down, when sprint ends.
 - Add delays to stamina recharging, see the gate code.
-- Try to improve the feedback of the gates as currently they are only debuging.
+- Try to improve the feedback of the gates as currently they are only debugging.
 
 ## Hard 
 - Introduce finer elements of gameplay iteration, such as effecting the players turning radius during sprint, see Spyro the Dragon charging.
