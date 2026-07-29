@@ -40,6 +40,8 @@ AFT_SprintCharacter::AFT_SprintCharacter()
 	GetCharacterMovement()->JumpZVelocity = 700.f;
 	GetCharacterMovement()->AirControl = 0.35f;
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
+	/** Addition 1: Store base speed **/ 
+	DefaultSpeed = GetCharacterMovement()->MaxWalkSpeed(); 
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
@@ -92,7 +94,7 @@ void AFT_SprintCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AFT_SprintCharacter::Look);
 
-		//** Connah binding implementation **/ 
+		/** Addition 2: binding implementation **/ 
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Started, this, &AFT_SprintCharacter::SprintStart);
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &AFT_SprintCharacter::SprintStop);
 	}
@@ -138,18 +140,15 @@ void AFT_SprintCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
-/** Connah methods implementation */
+/** Addition: Methods implementation */
 void AFT_SprintCharacter::SprintStart(const FInputActionValue& Value)
 {
 	// we could set speeds, but i like scalers 
-	GetCharacterMovement()->MaxWalkSpeed = GetCharacterMovement()->MaxWalkSpeed * 2;
-	// make it so they have a speed up route
-	GetCharacterMovement()->MinAnalogWalkSpeed = GetCharacterMovement()->MinAnalogWalkSpeed * 3;
+	GetCharacterMovement()->MaxWalkSpeed = DefaultSpeed * 2.f;
 }
 
 void AFT_SprintCharacter::SprintStop(const FInputActionValue& Value)
 {
 	// Reset the speeds
-	GetCharacterMovement()->MaxWalkSpeed = GetCharacterMovement()->MaxWalkSpeed / 2;
-	GetCharacterMovement()->MinAnalogWalkSpeed = GetCharacterMovement()->MinAnalogWalkSpeed / 3;
+	GetCharacterMovement()->MaxWalkSpeed = DefaultSpeed;
 }

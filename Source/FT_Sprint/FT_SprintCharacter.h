@@ -44,9 +44,12 @@ class AFT_SprintCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
-	/** Connah Addition 1: Sprint Input Action */
+	/** Addition 1: Sprint Input Action */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* SprintAction;
+	
+	/** Addition 2: Hold default value **/
+	float DefaultSpeed = 0;
 
 public:
 	AFT_SprintCharacter();
