@@ -41,7 +41,7 @@ AFT_SprintCharacter::AFT_SprintCharacter()
 	GetCharacterMovement()->AirControl = 0.35f;
 	GetCharacterMovement()->MaxWalkSpeed = 500.f;
 	/** Addition 1: Store base speed **/ 
-	DefaultSpeed = GetCharacterMovement()->MaxWalkSpeed(); 
+	DefaultSpeed = GetCharacterMovement()->MaxWalkSpeed;
 	GetCharacterMovement()->MinAnalogWalkSpeed = 20.f;
 	GetCharacterMovement()->BrakingDecelerationWalking = 2000.f;
 	GetCharacterMovement()->BrakingDecelerationFalling = 1500.0f;
