@@ -1,5 +1,5 @@
 # FT_Sprint
- This focus topic is based on a simple sprint mechanic.
+ This focus topic is based on a simple sprint mechanic. Before you begin this project you should play about with this [repo](https://atomechllc.github.io/jump-test-classic/), to see how slight changes in code gives different gameplay styles.
 
 ## Overview
 
