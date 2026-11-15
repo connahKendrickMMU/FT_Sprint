@@ -7,7 +7,7 @@ This project involves implementing a sprint mechanic, but it currently lacks inp
 - Create the input action.
 - Update the input mapping context.
 
-From this you will learn about input context mapping, function binding in C++ and some basic C++ logic. You can also see i have added a common style gate way mini game for you to play about with the mechanic you are making and could expand upon it.
+From this you will learn about input context mapping, function binding in C++ and some basic C++ logic. You can also see i have added a common style gate way mini game for you to play about with the mechanic you are making and could expand upon it.  You can see a video overview [here](https://mmutube.mmu.ac.uk/media/FT_Sprint+Overview/1_a13fsf5x).
 
 ## Where to find the relevant scripts
 
