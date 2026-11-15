@@ -97,6 +97,8 @@ void AFT_SprintCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInput
 		/** Addition 2: binding implementation **/ 
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Started, this, &AFT_SprintCharacter::SprintStart);
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this, &AFT_SprintCharacter::SprintStop);
+		// Canceled fires instead of Completed if the input never fully triggers, e.g. a quick tap on a Hold trigger
+		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Canceled, this, &AFT_SprintCharacter::SprintStop);
 	}
 	else
 	{
